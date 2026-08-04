@@ -5,6 +5,9 @@ export default function Treatments() {
   return (
  <div>
     <Header/>   
-    </div>
+      <div className="pageContent">
+        Treatments
+      </div>
+  </div>
   );
 }

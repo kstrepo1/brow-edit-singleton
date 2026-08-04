@@ -1,19 +1,47 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/book", label: "Book" },
+  { href: "/contact", label: "Contact" },
+  { href: "/treatments", label: "Treatments" },
+  { href: "/faq", label: "FAQ" },
+];
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <main>
       <div className="headerBar">
-        <div className="headerLinks ">
-        <a className="headerLink" href="/">Home</a>
-        <a className="headerLink" href="/about">About</a>
-        <a className="headerLink" href="/book">Book</a>
-        <a className="headerLink" href="/contact">Contact</a>
-        <a className="headerLink" href="/treatments">Treatments</a>
-        <a className="headerLink" href="/faq">FAQ</a>
-      </div>
+        <Image
+          src="/thebroweditlogo.png"
+          width={300}
+          height={500}
+          alt="The Brow Edit Logo"
+          loading="eager"
+        />
+        <div className="headerLinks">
+          {links.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <a
+                key={link.href}
+                className={`headerLink${isActive ? " activeLink" : ""}`}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </main>
-    
   );
 }

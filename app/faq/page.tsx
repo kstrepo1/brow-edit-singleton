@@ -5,6 +5,9 @@ export default function FAQ() {
   return (
  <div>
     <Header/>   
+    <div className="pageContent">
+      FAQ
+    </div>
     </div>
   );
 }

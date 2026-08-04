@@ -5,6 +5,9 @@ export default function Book() {
   return (
  <div>
     <Header/>   
-    </div>
+        <div className="pageContent">
+          Insert Booking Embed
+        </div>
+  </div>
   );
 }
