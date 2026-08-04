@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --headerbg: #f8efdd;
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --headerbg: #f8efdd;
   }
 }
 
@@ -23,4 +25,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerBar{
+  background: var(--headerbg);
+  height:100px;
+  color: #0a0a0a;
+}
+
+.headerLink{
+  padding:1rem;
 }
