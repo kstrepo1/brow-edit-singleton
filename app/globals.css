@@ -58,3 +58,15 @@ a{
   color: var(--linkHighlighted);
     font-weight: 100;
 }
+
+.pageContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.textBlock{
+  padding: 1rem 0 0 0;
+}
