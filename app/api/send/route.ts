@@ -15,8 +15,6 @@ export async function POST() {
       subject: 'New Website Form Submission 📧',
       // Use React.createElement to avoid JSX in a .ts file
       react: React.createElement(EmailTemplate, { firstName: 'John' }),
-      // Provide an idempotency key to avoid duplicate sends. Prefer a stable key per event/entity in production.
-      idempotencyKey: `send-email/${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     });
 
     if (error) {
