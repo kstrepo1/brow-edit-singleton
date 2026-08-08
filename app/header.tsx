@@ -29,12 +29,19 @@ export default function Header() {
           {links.map((link) => {
             const isActive = pathname === link.href;
 
-            return (
+            return isActive ? (
+              <h1
+                key={link.href}
+                className="headerLink activeLink"
+                aria-current="page"
+              >
+                {link.label}
+              </h1>
+            ) : (
               <a
                 key={link.href}
-                className={`headerLink${isActive ? " activeLink" : ""}`}
+                className="headerLink"
                 href={link.href}
-                aria-current={isActive ? "page" : undefined}
               >
                 {link.label}
               </a>

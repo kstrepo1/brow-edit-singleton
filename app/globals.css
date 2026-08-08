@@ -6,7 +6,7 @@
   --headerbg: #f8efdd;
   --footerbg: #f8efdd;
   --linkHighlighted: #725b57;
-  --linkcorecolor: #725b57;
+  --linkcorecolor: #ae8d88;
 }
 
 @theme inline {
@@ -63,6 +63,10 @@ a{
 
 .footerBar{
   background: var(--footerbg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pageContent{
@@ -75,4 +79,9 @@ a{
 
 .textBlock{
   padding: 1rem 0 0 0;
+}
+
+h1 {
+  all: unset;
+  display: inline;
 }

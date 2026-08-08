@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Header from "../header";
+import ContactSplit from "./contactsplit";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -66,57 +67,67 @@ export default function Contact() {
   return (
     <div>
       <Header />
-      <div className="pageContent">
-        <h1>Contact Us</h1>
-        <p>Please complete the form below and include either a contact number or email address so we can get back to you.</p>
-        <form onSubmit={handleSubmit} className="contactForm min-w-100">
-          <label >
-            Name: 
+      <div className="pageContent px-4 py-6 sm:px-6 lg:px-8">
+        <ContactSplit />
+
+        <p className="w-full max-w-2xl px-2 text-center text-sm text-gray-700 sm:px-0 sm:text-left sm:text-base dark:text-gray-300">
+          Please complete the form below and include either a contact number or email address so we can get back to you.
+        </p>
+        <form
+          onSubmit={handleSubmit}
+          className="mt-4 flex w-full max-w-2xl flex-col gap-4 rounded-xl border border-gray-200 bg-white/80 p-4 shadow-sm sm:p-6 dark:border-white/10 dark:bg-white/5"
+        >
+          <label className="flex flex-col gap-2 text-sm font-medium">
+            <span>Name</span>
             <input
               type="text"
               value={name}
               onChange={(event) => setName(event.target.value)}
               required
               placeholder=""
-              className="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600 dark:bg-white/5 dark:outline-white/10 dark:focus-within:outline-indigo-500"/>
+              className="w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+            />
           </label>
-          <label>
-            Contact Number: 
+          <label className="flex flex-col gap-2 text-sm font-medium">
+            <span>Contact Number</span>
             <input
               type="tel"
               value={contactNumber}
               onChange={(event) => setContactNumber(event.target.value)}
               placeholder="04......"
-              className="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600 dark:bg-white/5 dark:outline-white/10 dark:focus-within:outline-indigo-500"/>
+              className="w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+            />
           </label>
-          <label>
-            Email Address: 
+          <label className="flex flex-col gap-2 text-sm font-medium">
+            <span>Email Address</span>
             <input
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Your email address"
-              className="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600 dark:bg-white/5 dark:outline-white/10 dark:focus-within:outline-indigo-500"/>
+              className="w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+            />
           </label>
-          <label>
-            Message*
-            <br/>
+          <label className="flex flex-col gap-2 text-sm font-medium">
+            <span>Message</span>
             <textarea
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               required
               placeholder="Your message"
-              rows={3}
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-                  />
+              rows={5}
+              className="w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+            />
           </label>
-          <br/>
-          <button type="submit" disabled={loading} className="border-0.5 border-gray-100 p-2">
-          
-            {loading ? "Sending... " : "Send Contact Request "}
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-md bg-[var(--linkcorecolor)] px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+          >
+            {loading ? "Sending..." : "Send Contact Request"}
           </button>
         </form>
-        {status ? <p>{status}</p> : null}
+        {status ? <p className="mt-4 w-full max-w-2xl text-sm text-center sm:text-left">{status}</p> : null}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function Book() {
     <>
       <Header/>
       <div className="pageContent">
-        Hello
+        
 
         <Script id="timely-init" strategy="afterInteractive">
         {`
