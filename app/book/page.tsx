@@ -1,13 +1,24 @@
-import Image from "next/image";
+"use client";
+
+import Script from "next/script";
 import Header from "../header";
+import TimelyButton from "./timelyButton";
 
 export default function Book() {
   return (
- <div>
-    <Header/>   
-        <div className="pageContent">
-          Insert Booking Embed
-        </div>
-  </div>
+    <>
+      <Header/>
+      <div className="pageContent">
+        Hello
+
+        <Script id="timely-init" strategy="afterInteractive">
+        {`
+          new timelyButton("thebrowedit1", {
+            style: "dark"
+          });
+        `}
+        </Script>
+      </div>
+    </>
   );
 }

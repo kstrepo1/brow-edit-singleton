@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./header";
+import Footer from "./footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           We can't wait to meet you soon!
         </div>
       </div>
+      <Footer/>
     </div>
 
      
