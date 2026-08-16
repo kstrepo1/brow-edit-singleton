@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "../header";
 import Footer from "../footer";
+import GoogleMap from "./googleMap";
 
 export default function About() {
   return (
@@ -30,9 +31,20 @@ export default function About() {
         </div>  
 
       </div>
-      <div>
-        See some of my work below
+      <div className="flex flex-col md:flex-row w-full gap-6">
+        
+        {/* Left Side: Map */}
+        <div className="flex-1 w-full">
+          <GoogleMap />
+        </div>
+
+        {/* Right Side: Content */}
+        <div className="flex-1 w-full">
+          Hello
+        </div>
+
       </div>
+
     </div>
     <Footer/>
   </div>

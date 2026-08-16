@@ -70,9 +70,6 @@ export default function Contact() {
       <div className="pageContent px-4 py-6 sm:px-6 lg:px-8">
         <ContactSplit />
 
-        <p className="w-full max-w-2xl px-2 text-center text-sm text-gray-700 sm:px-0 sm:text-left sm:text-base dark:text-gray-300">
-          Please complete the form below and include either a contact number or email address so we can get back to you.
-        </p>
         <form
           onSubmit={handleSubmit}
           className="mt-4 flex w-full max-w-2xl flex-col gap-4 rounded-xl border border-gray-200 bg-white/80 p-4 shadow-sm sm:p-6 dark:border-white/10 dark:bg-white/5"

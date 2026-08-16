@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Header from "./header";
 import Footer from "./footer";
+import GoogleMap from "./about/googleMap";
+import { Text } from "@react-email/components";
 
 export default function Home() {
   return (
@@ -10,7 +12,7 @@ export default function Home() {
       <div className="pageContent">
         <Image
         src="/banner.png"
-        height={300}
+        height={800}
         width={800}
         alt="A 3 split banner showing the practice chair in a warm and inviting environment, a fresh brow and lash treatment, and a photo of the founder, Tegan"
         loading="eager"
