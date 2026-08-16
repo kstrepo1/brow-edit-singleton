@@ -23,14 +23,14 @@ export default function Header() {
     <>
       <header>
         <div className="headerBar">
-          <div className="logoWrapper">
+          <div className="logoWrapper"><a href="/">
             <Image
               src="/thebroweditlogo.png"
               width={300}
               height={500}
               alt="The Brow Edit Logo"
               loading="eager"
-            />
+            /></a>
           </div>
 
           <button

@@ -26,7 +26,7 @@ export default function TimelyButton({
           onClick={() => setIsOpen(true)}
           className={
             style === "dark"
-              ? "inline-flex items-center justify-center rounded-md bg-[#171717] px-6 py-3 text-base font-medium tracking-wide text-white transition-colors duration-200 hover:bg-[#2b2b2b]"
+              ? "bookButton inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-medium tracking-wide transition-colors duration-200"
               : "inline-flex items-center justify-center rounded-md border border-[#171717] bg-white px-6 py-3 text-base font-medium tracking-wide text-[#171717] transition-colors duration-200 hover:bg-[#f6f1eb]"
           }
         >

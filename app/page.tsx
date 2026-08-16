@@ -23,6 +23,15 @@ export default function Home() {
           We can't wait to meet you soon!
         </div>
         <TimelyButton buttonId="home-book-button" className="flex justify-center pb-8" />
+
+        <div className="flex justify-center gap-4 pb-10">
+          <a href="/treatments" className="homeLinkButton">
+            View treatments
+          </a>
+          <a href="/contact" className="homeLinkButton">
+            Contact us
+          </a>
+        </div>
       </div>
       <Footer />
     </div>

@@ -6,6 +6,7 @@
   --headerbg: #f8efdd;
   --footerbg: #f8efdd;
   --linkHighlighted: #725b57;
+  --linkHighlightedDark: #4a3b39;
   --linkcorecolor: #ae8d88;
 }
 
@@ -23,6 +24,7 @@
     --headerbg: #f8efdd;
     --footerbg: #f8efdd;
     --linkHighlighted: #725b57;
+    --linkHighlightedDark: #4a3b39;
     --linkcorecolor: #a29592;
   }
 }
@@ -140,6 +142,35 @@ body {
 .activeLink{
   color: var(--linkHighlighted);
     font-weight: 100;
+}
+
+.bookButton{
+  background-color: var(--linkHighlightedDark);
+  color: #ffffff;
+}
+
+.bookButton:hover{
+  background-color: var(--linkHighlighted);
+}
+
+.homeLinkButton{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: 1px solid var(--linkHighlighted);
+  padding: 0.75rem 1.5rem;
+  color: var(--linkHighlighted);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.homeLinkButton:hover{
+  background: var(--linkHighlighted);
+  color: #ffffff;
 }
 
 .footerBar{
