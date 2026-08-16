@@ -84,7 +84,7 @@ body {
 }
 
 .headerLinks.open{
-  display: block;
+  display: flex; /* flex so the column direction above applies: mobile links stack */
 }
 
 @media (min-width: 640px) {
@@ -100,8 +100,10 @@ body {
 
   .headerLinks{
     display: flex !important;
-    flex-direction: column;
+    flex-direction: row; /* desktop: links side by side */
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-end;
     padding: 0;
     gap: 0.25rem;
   }
@@ -156,11 +158,6 @@ body {
 
 .textBlock{
   padding: 1rem 0 0 0;
-}
-
-h1 {
-  all: unset;
-  display: inline;
 }
 
 .h3{
