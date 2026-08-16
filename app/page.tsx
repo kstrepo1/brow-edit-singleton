@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Header from "./header";
 import Footer from "./footer";
-import GoogleMap from "./about/googleMap";
-import { Text } from "@react-email/components";
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -23,6 +22,17 @@ export default function Home() {
           With 8 years of experience across New Zealand and Australia, we're excited to now be in Singleton, located inside the beautiful Haus of Artistry.
           We can't wait to meet you soon!
         </div>
+        <div>
+        <Script id="timely-init" strategy="afterInteractive">
+          {`
+            new timelyButton("thebrowedit1", {
+              style: "dark"
+            });
+          `}
+        </Script>
+        </div>
+        
+
       </div>
       <Footer/>
     </div>
