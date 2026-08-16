@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import Header from "../header";
 import ContactSplit from "./contactsplit";
+import MapandNumber from "./mapandnumber";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -67,7 +68,9 @@ export default function Contact() {
   return (
     <div>
       <Header />
-      <div className="pageContent px-4 py-6 sm:px-6 lg:px-8">
+      <div className="pageContent px-4 py-6 sm:px-6 lg:px-8 ">
+        <MapandNumber/>
+        <div className="mt-3"/>
         <ContactSplit />
 
         <form
@@ -125,6 +128,7 @@ export default function Contact() {
           </button>
         </form>
         {status ? <p className="mt-4 w-full max-w-2xl text-sm text-center sm:text-left">{status}</p> : null}
+        
       </div>
     </div>
   );

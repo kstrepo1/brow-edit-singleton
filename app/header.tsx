@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import BookingModal from "./bookingModal";
 
 const links = [
   { href: "/", label: "Home" },
@@ -17,7 +18,6 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
-  const bookingUrl = "https://bookings.gettimely.com/thebrowedit1/bb/book";
 
   return (
     <>
@@ -109,32 +109,10 @@ export default function Header() {
         </div>
       </header>
 
-      {bookingModalOpen ? (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setBookingModalOpen(false)}
-        >
-          <div
-            className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-lg bg-white shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              aria-label="Close booking modal"
-              onClick={() => setBookingModalOpen(false)}
-              className="absolute -left-2 top-2 z-10 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-sm text-[#171717] shadow-sm transition hover:bg-white"
-            >
-              ×
-            </button>
-            <iframe
-              title="Book an appointment"
-              src={bookingUrl}
-              className="h-full w-full border-0"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      ) : null}
+      <BookingModal
+        isOpen={bookingModalOpen}
+        onClose={() => setBookingModalOpen(false)}
+      />
     </>
   );
 }

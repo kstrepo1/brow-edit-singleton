@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "../header";
+import Footer from "../footer";
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
     
     <div className="pageContent">
       <div className="privacy">
-      <h2 className="text-3xl">The Brow Edit Studios Privacy Policy.</h2>
+      <h2 className="text-3xl mt-6">The Brow Edit Studios Privacy Policy.</h2>
       <p>Last updated: 16/08/2026</p><br/>
 
 This Privacy Policy describes how The Brow Edit Studios (the "Site"
@@ -156,7 +157,9 @@ Please be aware that no security measures are perfect or impenetrable, and we ca
 In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential
 information to us.
 </div>
+<br/><br/>
     </div>
+    <Footer/>
   </div>
   );
 }

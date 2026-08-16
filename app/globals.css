@@ -167,3 +167,8 @@ body {
 .privacy.br{
   padding-top: 20px;
 }
+
+.bookingModalCard{
+  height: 90vh; /* fallback for browsers without dvh support */
+  height: 90dvh; /* tracks the real visible viewport as mobile browser chrome shows/hides */
+}
