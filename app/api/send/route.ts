@@ -5,8 +5,35 @@ import { NextResponse } from 'next/server';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
+const RECAPTCHA_MIN_SCORE = 0.5;
+
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
+}
+
+async function verifyRecaptcha(token: string, action: string): Promise<boolean> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY?.trim();
+
+  if (!secretKey) {
+    console.error('RECAPTCHA_SECRET_KEY is not configured.');
+    return false;
+  }
+
+  const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ secret: secretKey, response: token }),
+  });
+
+  const result = await response.json().catch(() => null) as
+    | { success?: boolean; score?: number; action?: string }
+    | null;
+
+  if (!result?.success || typeof result.score !== 'number') {
+    return false;
+  }
+
+  return result.score >= RECAPTCHA_MIN_SCORE && result.action === action;
 }
 
 export async function POST(request: Request) {
@@ -16,7 +43,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Request body must be valid JSON.' }, { status: 400 });
   }
 
-  const { name, contactNumber, email, message } = body as Record<string, unknown>;
+  const { name, contactNumber, email, message, recaptchaToken } = body as Record<string, unknown>;
   const trimmedName = isNonEmptyString(name) ? name.trim() : '';
   const trimmedMessage = isNonEmptyString(message) ? message.trim() : '';
   const trimmedContactNumber = isNonEmptyString(contactNumber) ? contactNumber.trim() : '';
@@ -28,6 +55,10 @@ export async function POST(request: Request) {
 
   if (!trimmedContactNumber && !trimmedEmail) {
     return NextResponse.json({ error: 'Please provide either a contact number or an email address.' }, { status: 400 });
+  }
+
+  if (!isNonEmptyString(recaptchaToken) || !(await verifyRecaptcha(recaptchaToken, 'contact_form'))) {
+    return NextResponse.json({ error: 'reCAPTCHA verification failed. Please try again.' }, { status: 400 });
   }
 
   if (!resend) {

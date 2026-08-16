@@ -9,6 +9,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.claude
+2026-08-16-232838-prompt.txt
 
 # testing
 /coverage

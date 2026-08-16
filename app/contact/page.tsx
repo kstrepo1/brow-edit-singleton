@@ -1,9 +1,34 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Script from "next/script";
 import Header from "../header";
 import ContactSplit from "./contactsplit";
 import MapandNumber from "./mapandnumber";
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+type Grecaptcha = {
+  ready: (callback: () => void) => void;
+  execute: (siteKey: string, options: { action: string }) => Promise<string>;
+};
+
+async function getRecaptchaToken(action: string): Promise<string | null> {
+  const grecaptcha = (window as unknown as { grecaptcha?: Grecaptcha }).grecaptcha;
+
+  if (!RECAPTCHA_SITE_KEY || !grecaptcha) {
+    return null;
+  }
+
+  return new Promise((resolve, reject) => {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute(RECAPTCHA_SITE_KEY, { action })
+        .then(resolve)
+        .catch(reject);
+    });
+  });
+}
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -35,6 +60,15 @@ export default function Contact() {
     setLoading(true);
 
     try {
+      let recaptchaToken: string | null = null;
+      try {
+        recaptchaToken = await getRecaptchaToken("contact_form");
+      } catch {
+        setStatus("Unable to verify you're not a robot. Please try again.");
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch("/api/send", {
         method: "POST",
         headers: {
@@ -45,6 +79,7 @@ export default function Contact() {
           contactNumber: trimmedContactNumber,
           email: trimmedEmail,
           message: trimmedMessage,
+          recaptchaToken,
         }),
       });
 
@@ -68,6 +103,12 @@ export default function Contact() {
   return (
     <div>
       <Header />
+      {RECAPTCHA_SITE_KEY ? (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+          strategy="afterInteractive"
+        />
+      ) : null}
       <div className="pageContent px-4 py-6 sm:px-6 lg:px-8 ">
         <MapandNumber/>
         <div className="mt-3"/>
