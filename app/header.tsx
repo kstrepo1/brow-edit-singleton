@@ -40,7 +40,7 @@ export default function Header() {
             ) : (
               <a
                 key={link.href}
-                className="headerLink"
+                className="headerLink headerA"
                 href={link.href}
               >
                 {link.label}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "../header";
+import Footer from "../footer";
 
 export default function About() {
   return (
@@ -24,17 +25,16 @@ export default function About() {
         </div>
         <div className="flex-3 flex items-center">
           <div>
-        Hi, I'm Tegan!
-
-        Since beginning my career in 2017, I've specialised in creating soft, natural brows and lash lifts tailored to suit your unique features. With experience in both New Zealand and Australia, I've had the opportunity to learn from some of the best artists in the industry.
-
-        I'm now based in Singleton, NSW, and can't wait to welcome you and help you feel your most confident.
-       
+            Hi, I'm Tegan. Since 2017, I've dedicated my craft to creating soft, natural brows and lash lifts designed to enhance your unique features rather than overpower them. After years of refining my techniques alongside leading artists across Australia and New Zealand, I've brought that experience home to Singleton, NSW. Whether you're after effortless everyday definition or a subtle lift, my focus is always on gentle, tailored artistry that leaves you feeling effortlessly confident.
           </div>
-          </div>
-      
+        </div>  
+
+      </div>
+      <div>
+        See some of my work below
       </div>
     </div>
+    <Footer/>
   </div>
   );
 }
