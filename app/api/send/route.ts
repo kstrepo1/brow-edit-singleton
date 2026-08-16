@@ -3,7 +3,7 @@ import { EmailTemplate } from '../../../components/email-template';
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY as string);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
@@ -28,6 +28,10 @@ export async function POST(request: Request) {
 
   if (!trimmedContactNumber && !trimmedEmail) {
     return NextResponse.json({ error: 'Please provide either a contact number or an email address.' }, { status: 400 });
+  }
+
+  if (!resend) {
+    return NextResponse.json({ error: 'Email sending is not configured.' }, { status: 503 });
   }
 
   try {

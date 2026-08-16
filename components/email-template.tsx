@@ -1,11 +1,5 @@
 import * as React from 'react';
-import { Body } from '@react-email/body';
-import { Container } from '@react-email/container';
-import { Head } from '@react-email/head';
-import { Html } from '@react-email/html';
-import { Heading } from '@react-email/heading';
-import { Section } from '@react-email/section';
-import { Text } from '@react-email/text';
+import { Body, Container, Head, Html, Section, Text } from '@react-email/components';
 
 interface EmailTemplateProps {
   name: string;
