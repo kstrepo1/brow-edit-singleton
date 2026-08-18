@@ -26,7 +26,7 @@ export default function MapandNumber(){
                         </div>
                         <a
                           href="tel:0421197333"
-                          className="mt-2 inline-block text-[var(--linkHighlighted)] hover:underline"
+                          className="mt-2 inline-block text-[var(--contentAccent)] hover:underline"
                           onClick={()=>sendGTMEvent({ event: 'buttonClicked', value: 'call' })}
                         >
                           0421 197 333
@@ -37,7 +37,7 @@ export default function MapandNumber(){
                         href="https://www.google.com/maps/dir//The+Brow+Edit,+84+John+St,+Singleton+NSW+2330/@-37.7950689,144.8841253,2711m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x6b0cb172a7519155:0x3932ac5aef96eb4!2m2!1d151.1657893!2d-32.5663148"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-block text-[var(--linkHighlighted)] hover:underline"
+                        className="mt-4 inline-block text-[var(--contentAccent)] hover:underline"
                         onClick={()=>sendGTMEvent({ event: 'buttonClicked', value: 'getDirections' })}
                       >
                         Get directions

@@ -86,12 +86,12 @@ export default async function TreatmentCategoryPage({
       />
 
       <div className="pageContent px-4 py-6 sm:px-6">
-        <nav aria-label="Breadcrumb" className="w-full text-sm text-gray-500">
+        <nav aria-label="Breadcrumb" className="w-full text-sm text-gray-500 dark:text-gray-400">
           <Link href="/treatments" className="hover:underline">
             Treatments
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-[var(--linkHighlighted)]">{category.shortName}</span>
+          <span className="text-[var(--contentAccent)]">{category.shortName}</span>
         </nav>
 
         <section className="mt-4 w-full text-center">
@@ -101,7 +101,7 @@ export default async function TreatmentCategoryPage({
           <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">
             {category.name === "Add Ons" ? "Brow & Lash Add-Ons" : category.name}
           </h1>
-          <p className="mt-2 text-sm font-medium uppercase tracking-[0.15em] text-[var(--linkHighlighted)]">
+          <p className="mt-2 text-sm font-medium uppercase tracking-[0.15em] text-[var(--contentAccent)]">
             {category.tagline}
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-700 dark:text-gray-300 sm:text-base">
@@ -115,14 +115,14 @@ export default async function TreatmentCategoryPage({
               key={treatment.name}
               className="flex gap-4 rounded-xl border border-gray-200 bg-[var(--headerbg)]/50 p-5 dark:border-white/10 dark:bg-white/5"
             >
-              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[var(--linkHighlighted)] dark:bg-white/10">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[var(--contentAccent)] dark:bg-white/10">
                 {icons[treatment.icon]}
               </span>
               <div>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3">
                   <h2 className="text-base font-semibold">{treatment.name}</h2>
                   {treatment.price ? (
-                    <span className="whitespace-nowrap text-sm font-semibold text-[var(--linkHighlighted)]">
+                    <span className="whitespace-nowrap text-sm font-semibold text-[var(--contentAccent)]">
                       {treatment.price}
                     </span>
                   ) : null}
@@ -154,7 +154,7 @@ export default async function TreatmentCategoryPage({
                 <Link
                   key={other.slug}
                   href={`/treatments/${other.slug}`}
-                  className="text-[var(--linkHighlighted)] hover:underline"
+                  className="text-[var(--contentAccent)] hover:underline"
                 >
                   {other.shortName}
                 </Link>

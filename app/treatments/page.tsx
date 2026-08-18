@@ -18,7 +18,7 @@ export default function Treatments() {
 
       <div className="pageContent px-4 py-6 sm:px-6">
         <section className="w-full text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--linkHighlighted)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--contentAccent)]">
             Treatments
           </p>
           <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">
@@ -37,13 +37,13 @@ export default function Treatments() {
             <Link
               key={category.slug}
               href={`/treatments/${category.slug}`}
-              className="flex gap-4 rounded-xl border border-gray-200 bg-[var(--headerbg)]/50 p-5 transition hover:border-[var(--linkHighlighted)]/40 hover:bg-[var(--headerbg)]/80 dark:border-white/10 dark:bg-white/5"
+              className="flex gap-4 rounded-xl border border-gray-200 bg-[var(--headerbg)]/50 p-5 transition hover:border-[var(--contentAccent)]/40 hover:bg-[var(--headerbg)]/80 dark:border-white/10 dark:bg-white/5"
             >
-              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/70 text-[var(--linkHighlighted)] dark:bg-white/10">
+              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/70 text-[var(--contentAccent)] dark:bg-white/10">
                 {icons[category.icon]}
               </span>
               <div>
-                <h2 className="text-base font-semibold text-[var(--linkHighlighted)]">
+                <h2 className="text-base font-semibold text-[var(--contentAccent)]">
                   {category.shortName}
                 </h2>
                 <p className="mt-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
@@ -70,7 +70,7 @@ export default function Treatments() {
           />
           <a
             href="/contact"
-            className="inline-block text-sm text-[var(--linkHighlighted)] hover:underline"
+            className="inline-block text-sm text-[var(--contentAccent)] hover:underline"
           >
             Or send us a message
           </a>

@@ -7,7 +7,12 @@
   --footerbg: #f8efdd;
   --linkHighlighted: #725b57;
   --linkHighlightedDark: #4a3b39;
-  --linkcorecolor: #ae8d88;
+  --linkcorecolor: #63504b;
+  /* Accent used on content-area surfaces, which switch between light and
+     dark backgrounds. --linkHighlighted stays fixed because the header/
+     footer bar it's also used against keeps its cream background in both
+     themes. */
+  --contentAccent: #725b57;
 }
 
 @theme inline {
@@ -21,11 +26,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --headerbg: #f8efdd;
-    --footerbg: #f8efdd;
-    --linkHighlighted: #725b57;
-    --linkHighlightedDark: #4a3b39;
-    --linkcorecolor: #a29592;
+    --contentAccent: #c9a39d;
   }
 }
 
@@ -153,14 +154,22 @@ body {
   background-color: var(--linkHighlighted);
 }
 
+@media (prefers-color-scheme: dark) {
+  .bookButton{
+    /* Without this the button's dark-brown fill barely separates from the
+       near-black page background. */
+    border: 1px solid var(--contentAccent);
+  }
+}
+
 .homeLinkButton{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 0.375rem;
-  border: 1px solid var(--linkHighlighted);
+  border: 1px solid var(--contentAccent);
   padding: 0.75rem 1.5rem;
-  color: var(--linkHighlighted);
+  color: var(--contentAccent);
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
@@ -169,7 +178,9 @@ body {
 }
 
 .homeLinkButton:hover{
-  background: var(--linkHighlighted);
+  /* Fixed (non-theme-dependent) fill so the white hover text stays
+     readable — --contentAccent is too light against white in dark mode. */
+  background: var(--linkHighlightedDark);
   color: #ffffff;
 }
 

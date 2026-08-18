@@ -8,7 +8,7 @@ export default function Terms() {
       <Header />
       <div className="pageContent">
         <h2 className="text-4xl font-semibold mt-6">Terms and Conditions</h2>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
           The Brow Edit Studio — Last updated: 16/08/2026
         </p>
         <p className="mt-4">

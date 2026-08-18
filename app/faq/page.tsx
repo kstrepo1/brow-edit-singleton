@@ -175,7 +175,7 @@ export default function FAQ() {
 
       <div className="pageContent px-4 py-6 sm:px-6">
         <section className="w-full text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--linkHighlighted)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--contentAccent)]">
             FAQ
           </p>
           <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">
@@ -204,7 +204,7 @@ export default function FAQ() {
                   {item.link ? (
                     <Link
                       href={item.link.href}
-                      className="mt-2 inline-block text-sm text-[var(--linkHighlighted)] hover:underline"
+                      className="mt-2 inline-block text-sm text-[var(--contentAccent)] hover:underline"
                     >
                       {item.link.label} &rarr;
                     </Link>
@@ -224,7 +224,7 @@ export default function FAQ() {
           <TimelyButton buttonId="faq-book-button" className="mt-6 flex justify-center" />
           <Link
             href="/contact"
-            className="inline-block text-sm text-[var(--linkHighlighted)] hover:underline"
+            className="inline-block text-sm text-[var(--contentAccent)] hover:underline"
           >
             Or send us a message
           </Link>

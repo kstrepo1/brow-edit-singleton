@@ -78,7 +78,7 @@ export default function About() {
       <div className="pageContent px-4 py-6 sm:px-6">
         {/* Intro */}
         <section className="w-full text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--linkHighlighted)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--contentAccent)]">
             About us
           </p>
           <h1 className="mt-3 block text-3xl font-semibold sm:text-4xl">
@@ -127,7 +127,7 @@ export default function About() {
                   <dt className="text-[11px] uppercase tracking-wide text-gray-500 dark:text-gray-400">
                     {fact.label}
                   </dt>
-                  <dd className="mt-1 text-lg font-semibold text-[var(--linkHighlighted)]">
+                  <dd className="mt-1 text-lg font-semibold text-[var(--contentAccent)]">
                     {fact.value}
                   </dd>
                 </div>
@@ -165,10 +165,10 @@ export default function About() {
                 key={value.title}
                 className="rounded-xl border border-gray-200 bg-[var(--headerbg)]/60 p-5 dark:border-white/10 dark:bg-white/5"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-[var(--linkHighlighted)] dark:bg-white/10">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-[var(--contentAccent)] dark:bg-white/10">
                   {value.icon}
                 </span>
-                <h3 className="mt-3 text-base font-semibold text-[var(--linkHighlighted)]">
+                <h3 className="mt-3 text-base font-semibold text-[var(--contentAccent)]">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
@@ -204,7 +204,7 @@ export default function About() {
                 </div>
                 <a
                   href="tel:0421197333"
-                  className="mt-2 inline-block text-[var(--linkHighlighted)] hover:underline"
+                  className="mt-2 inline-block text-[var(--contentAccent)] hover:underline"
                 >
                   0421 197 333
                 </a>
@@ -214,7 +214,7 @@ export default function About() {
                 href="https://www.google.com/maps/dir//The+Brow+Edit,+84+John+St,+Singleton+NSW+2330/@-37.7950689,144.8841253,2711m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x6b0cb172a7519155:0x3932ac5aef96eb4!2m2!1d151.1657893!2d-32.5663148"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block text-[var(--linkHighlighted)] hover:underline"
+                className="mt-4 inline-block text-[var(--contentAccent)] hover:underline"
               >
                 Get directions
               </a>
@@ -235,7 +235,7 @@ export default function About() {
           />
           <a
             href="/contact"
-            className="inline-block text-sm text-[var(--linkHighlighted)] hover:underline"
+            className="inline-block text-sm text-[var(--contentAccent)] hover:underline"
           >
             Or send us a message
           </a>
