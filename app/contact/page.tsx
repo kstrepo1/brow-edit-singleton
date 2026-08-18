@@ -5,6 +5,7 @@ import Script from "next/script";
 import Header from "../header";
 import ContactSplit from "./contactsplit";
 import MapandNumber from "./mapandnumber";
+import Footer from "../footer";
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -171,6 +172,7 @@ export default function Contact() {
         {status ? <p className="mt-4 w-full max-w-2xl text-sm text-center sm:text-left">{status}</p> : null}
         
       </div>
+      <Footer/>
     </div>
   );
 }

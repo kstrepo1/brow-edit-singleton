@@ -1,18 +1,17 @@
 import GoogleMap from "../about/googleMap"
+import Footer from "../footer"
 
 export default function MapandNumber(){
     return(
                 <section className="my-2 w-full">
                   <div className="flex flex-col md:flex-row md:items-center">
-                    <div className="w-full flex-1">
-                      <GoogleMap />
-                    </div>
+                    
         
-                    <div className=" flex-1 text-sm text-right leading-relaxed">
-                      <h2 className="text-right text-2xl font-semibold">
+                    <div className=" flex-1 text-sm text-left leading-relaxed m-5">
+                      <h2 className="text-left text-2xl font-semibold">
                         Visit the studio
                       </h2>
-                      <p className="text-gray-700 text-right dark:text-gray-300">
+                      <p className="text-gray-700 text-left dark:text-gray-300">
                         You&apos;ll find The Brow Edit inside Haus of Artistry, in the
                         centre of Singleton.
                       </p>
@@ -41,7 +40,11 @@ export default function MapandNumber(){
                         Get directions
                       </a>
                     </div>
+                    <div className="w-full flex-1">
+                      <GoogleMap />
+                    </div>
                   </div>
+                  
                 </section>
     )
 }
