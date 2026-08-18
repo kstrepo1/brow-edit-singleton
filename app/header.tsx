@@ -28,7 +28,7 @@ export default function Header() {
             <Image
               src="/thebroweditlogo.png"
               width={300}
-              height={500}
+              height={107}
               alt="The Brow Edit Logo"
               loading="eager"
             /></a>
