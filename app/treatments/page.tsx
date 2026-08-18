@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "../header";
 import Footer from "../footer";
@@ -10,6 +11,24 @@ export const metadata: Metadata = {
   description:
     "Brow shaping, lamination, tinting, lash lifts and more at The Brow Edit - a boutique studio in Singleton, NSW serving Muswellbrook, Maitland, Cessnock and the Hunter Valley.",
 };
+
+const results = [
+  {
+    src: "/brows-ba-1.png",
+    alt: "Before and after brow shaping and tint at The Brow Edit",
+    caption: "Brow shaping & tint",
+  },
+  {
+    src: "/brows-ba-2.png",
+    alt: "Before and after lash lift at The Brow Edit",
+    caption: "Lash lift",
+  },
+  {
+    src: "/brows-ba-3.png",
+    alt: "Before and after brow lamination at The Brow Edit",
+    caption: "Brow lamination",
+  },
+];
 
 export default function Treatments() {
   return (
@@ -57,6 +76,33 @@ export default function Treatments() {
           ))}
         </section>
 
+        <section className="mt-14 w-full text-center">
+          <h2 className="text-2xl font-semibold">Real results</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            A few before &amp; afters from clients at The Brow Edit.
+          </p>
+          <div className="mt-6 grid w-full gap-4 sm:grid-cols-3">
+            {results.map((result) => (
+              <figure
+                key={result.src}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-[var(--headerbg)]/50 dark:border-white/10 dark:bg-white/5"
+              >
+                <div className="relative aspect-[4/5] w-full">
+                  <Image
+                    src={result.src}
+                    alt={result.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="p-3 text-sm font-medium text-[var(--contentAccent)]">
+                  {result.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-14 w-full rounded-2xl bg-[var(--headerbg)]/70 p-8 text-center dark:bg-white/5">
           <h2 className="text-2xl font-semibold">Ready to book?</h2>
