@@ -18,13 +18,15 @@ export const metadata: Metadata = {
   description: "The Brow Edit specialises in custom brows and lash lifts, completely tailored to you.",
 };
 
+const GTMID = process.env.NEXT_PUBLIC_GTM_ID as string;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <GoogleTagManager gtmId="GTM-PQW5NXBR" />
+      <GoogleTagManager gtmId={GTMID} />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
