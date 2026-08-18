@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Header from "./header";
 import Footer from "./footer";
 import TimelyButton from "./book/timelyButton";
+
+export const metadata: Metadata = {
+  title: "The Brow Edit | Brow & Lash Studio in Singleton NSW",
+  description:
+    "The Brow Edit is a boutique brow and lash studio in Singleton, NSW offering custom brow shaping, lamination, tinting and lash lifts. Book online today.",
+};
 
 export default function Home() {
   return (
