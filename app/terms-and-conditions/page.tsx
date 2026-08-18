@@ -82,10 +82,10 @@ export default function Terms() {
         <div className="mt-8">
           <h3 className="text-3xl">3. Patch Tests</h3>
           <p className="mt-2">
-            3.1 A patch test is required at least 24–48 hours prior to any
+            3.1 A patch test is reccommended at least 24-48 hours prior to any
             tinting, lash lift, or lamination service for new clients, or
             for returning clients who have not had the service in the last
-            6–12 months (per product manufacturer guidelines).
+            6-12 months (per product manufacturer guidelines).
           </p>
           <p className="mt-2">
             3.2 We reserve the right to refuse treatment if a patch test has
