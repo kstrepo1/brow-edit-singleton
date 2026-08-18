@@ -8,7 +8,7 @@ import InstagramFeed from "./igfeed";
 export const metadata: Metadata = {
   title: "The Brow Edit | Brow & Lash Studio in Singleton NSW",
   description:
-    "The Brow Edit is a boutique brow and lash studio in Singleton, NSW offering custom brow shaping, lamination, tinting and lash lifts. Book online today.",
+    "The Brow Edit Studio is a boutique brow and lash studio in Singleton, NSW offering custom brow shaping, lamination, tinting and lash lifts. Book online today.",
 };
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
           loading="eager"
         />
         <div className="textBlock m-5 mb-10">
-          The Brow Edit specialises in custom brows and lash lifts, completely tailored to you.
+          The Brow Edit Studio specialises in custom brows and lash lifts, completely tailored to you.
           Founded by Tegan, we are an inclusive space where everyone is welcome. Our goal is to make you feel confident, comfortable, and beautiful every time you visit.
           With 8 years of experience across New Zealand and Australia, we're excited to now be in Singleton, located inside the beautiful Haus of Artistry.
           We can't wait to meet you soon!
