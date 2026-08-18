@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "./header";
 import Footer from "./footer";
 import TimelyButton from "./book/timelyButton";
+import InstagramFeed from "./igfeed";
 
 export const metadata: Metadata = {
   title: "The Brow Edit | Brow & Lash Studio in Singleton NSW",
@@ -38,6 +39,9 @@ export default function Home() {
           <a href="/contact" className="homeLinkButton">
             Contact us
           </a>
+        </div>
+        <div className="h-screen w-full"> 
+        <InstagramFeed/>
         </div>
       </div>
       <Footer />
