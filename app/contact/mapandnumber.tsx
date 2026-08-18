@@ -1,5 +1,6 @@
 import GoogleMap from "../about/googleMap"
 import Footer from "../footer"
+import { sendGTMEvent } from '@next/third-parties/google'
 
 export default function MapandNumber(){
     return(
@@ -26,6 +27,7 @@ export default function MapandNumber(){
                         <a
                           href="tel:0421197333"
                           className="mt-2 inline-block text-[var(--linkHighlighted)] hover:underline"
+                          onClick={()=>sendGTMEvent({ event: 'buttonClicked', value: 'call' })}
                         >
                           0421 197 333
                         </a>
@@ -36,6 +38,7 @@ export default function MapandNumber(){
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-4 inline-block text-[var(--linkHighlighted)] hover:underline"
+                        onClick={()=>sendGTMEvent({ event: 'buttonClicked', value: 'getDirections' })}
                       >
                         Get directions
                       </a>

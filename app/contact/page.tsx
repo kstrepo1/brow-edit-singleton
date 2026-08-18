@@ -6,6 +6,7 @@ import Header from "../header";
 import ContactSplit from "./contactsplit";
 import MapandNumber from "./mapandnumber";
 import Footer from "../footer";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -98,6 +99,7 @@ export default function Contact() {
       setStatus("Unable to send message. Please try again.");
     } finally {
       setLoading(false);
+      sendGTMEvent({ event: 'buttonClicked', value: 'formsubmission' })
     }
   }
 
