@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { sendGTMEvent } from "@next/third-parties/google";
 import BookingModal from "../bookingModal";
 
 type TimelyButtonProps = {
@@ -23,7 +24,10 @@ export default function TimelyButton({
       <div id={buttonId} className={className}>
         <button
           type="button"
-          onClick={() => setIsOpen(true)}
+          onClick={() => {
+            sendGTMEvent({ event: "buttonClicked", value: buttonId });
+            setIsOpen(true);
+          }}
           className={
             style === "dark"
               ? "bookButton inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-medium tracking-wide transition-colors duration-200"

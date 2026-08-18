@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { sendGTMEvent } from "@next/third-parties/google";
 import BookingModal from "./bookingModal";
 
 const links = [
@@ -64,6 +65,7 @@ export default function Header() {
                     className="headerLink activeLink"
                     aria-current="page"
                     onClick={() => {
+                      sendGTMEvent({ event: "buttonClicked", value: "header-book-button" });
                       setOpen(false);
                       setBookingModalOpen(true);
                     }}
@@ -76,6 +78,7 @@ export default function Header() {
                     type="button"
                     className="headerLink headerA"
                     onClick={() => {
+                      sendGTMEvent({ event: "buttonClicked", value: "header-book-button" });
                       setOpen(false);
                       setBookingModalOpen(true);
                     }}

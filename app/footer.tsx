@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 
 export default function Footer() {
@@ -16,7 +17,11 @@ export default function Footer() {
       <div className="font-semibold text-s ">The Brow Edit Studio</div>
       <div className="text-xs">ABN: 25 522 140 582</div>
       <div className=" text-xs leading-relaxed">
-        <a href="tel:0421197333" className="hover:underline text-xs">0421 197 333</a>
+        <a
+          href="tel:0421197333"
+          className="hover:underline text-xs"
+          onClick={() => sendGTMEvent({ event: "buttonClicked", value: "call" })}
+        >0421 197 333</a>
         <br/>
         84 John St,<br />
         Singleton NSW 2330
@@ -26,6 +31,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className=" hover:opacity-80  text-xs hover:underline"
+          onClick={() => sendGTMEvent({ event: "buttonClicked", value: "getDirections" })}
         >
           Get Directions
         </a>
