@@ -32,17 +32,6 @@ const categories: FaqCategory[] = [
         link: { href: "/treatments/brow-styling", label: "See Brow Styling treatments" },
       },
       {
-        question: "Do I need a patch test before my first appointment?",
-        answer:
-          "Yes - a quick 15-minute patch test is required at least 24-48 hours before your first brow tint, lash tint or brow lamination appointment. It's a simple safety check to make sure your skin doesn't react to the tint or lamination solution, and it's required again if it's been a while since your last visit.",
-      },
-      {
-        question:
-          "I've had tint or lamination done somewhere else before - do I still need a patch test with you?",
-        answer:
-          "Yes. Patch test results aren't transferable between salons or products, so we require a patch test before your first tint, lash lift or lamination appointment with us, regardless of your history elsewhere.",
-      },
-      {
         question: "How do I book my first appointment?",
         answer:
           "You can book online any time through our booking system - choose your treatment, pick a time that suits you, and you're set. If you're not sure which treatment is right for you, send us a message and we're happy to help you choose.",
