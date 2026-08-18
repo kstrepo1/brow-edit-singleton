@@ -57,19 +57,6 @@ export default function Treatments() {
           ))}
         </section>
 
-        <section className="mt-6 flex w-full gap-4 rounded-xl border border-[var(--linkHighlighted)]/30 bg-white/60 p-5 dark:bg-white/5">
-          <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--headerbg)] text-[var(--linkHighlighted)]">
-            {icons[patchTestNote.icon]}
-          </span>
-          <div>
-            <h2 className="text-base font-semibold">
-              First time tinting or laminating with us?
-            </h2>
-            <p className="mt-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {patchTestNote.description}
-            </p>
-          </div>
-        </section>
 
         <section className="mt-14 w-full rounded-2xl bg-[var(--headerbg)]/70 p-8 text-center dark:bg-white/5">
           <h2 className="text-2xl font-semibold">Ready to book?</h2>
