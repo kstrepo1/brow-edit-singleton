@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Left Column */}
           <div className="flex flex-3 flex-col items-center text-center md:items-start md:text-left">
             <div className="font-semibold text-s ">The Brow Edit Studio</div>
-            <div className="text-xs">ABN: 25 522 140 582</div>
+            
             <div className=" text-xs leading-relaxed">
               <a
                 href="tel:0421197333"
@@ -30,6 +30,7 @@ export default function Footer() {
               >
                 Get Directions
               </a>
+              <div className="text-xs">ABN: 25 522 140 582</div>
             </div>
 
             {/* Social Links */}
